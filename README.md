@@ -44,10 +44,15 @@ novità settimanali (TOTW, promo, nuovi calciatori).
 
 I loghi sono **incorporati dentro `index.html`** (in base64): nessuna cartella
 immagini da caricare, funzionano anche offline. Compariscono nell'intestazione
-del sito, in classifica, nelle rose, nel tab Squadre e nel Modulo. Le squadre
-**Talento lirico** e **Carisma** non hanno un logo nel pacchetto: al posto
-del logo mostrano un monogramma (la loro iniziale). Per cambiare un logo o
-aggiungerne dei nuovi basta far generare un nuovo `index.html`.
+del sito, in classifica, nelle rose, nel tab Squadre e nel Modulo. **Tutte le
+15 squadre hanno il loro logo**, incluse **Alfa e Omega** (ex Carisma) e
+**Talento lirico**; il monogramma resta solo come fallback di sicurezza per un
+eventuale team rinominato senza logo. Per cambiare un logo o aggiungerne dei
+nuovi basta far generare un nuovo `index.html`.
+
+Il tema del sito è **nero con accenti rossi**, come il logo: il verde resta
+solo nei colori semantici dei risultati (W = vittoria), il rosso acceso
+contraddistingue bottoni, tab attivi, punteggi e premi.
 
 ---
 
