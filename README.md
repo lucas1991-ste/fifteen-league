@@ -8,11 +8,12 @@ senza Python sul tuo computer, senza proxy**.
 
 | File | A cosa serve |
 |------|--------------|
-| `index.html` | L'app completa (tutto in un file) |
+| `index.html` | L'app completa (tutto in un file) — **loghi del sito e delle squadre già incorporati dentro** |
 | `cards.json` | Catalogo completo: **~21.700 carte** (rating 47–95, l'intero database FutGenie) con foto carta |
 | `fut_scraper.py` | Lo scraper che **GitHub** eseguirà per aggiornare il catalogo |
 | `requirements.txt` | Dipendenze opzionali dello scraper (per la strategia futbin, non serve a FutGenie) |
 | `.github/workflows/update-cards.yml` | L'automazione che aggiorna `cards.json` e rideploya il sito |
+| `.github/workflows/apply-password.yml` | L'automazione che applica la **password di modifica** (GitHub Secrets) all'app |
 
 ## Come funziona (in 10 secondi)
 
@@ -38,6 +39,51 @@ Il parametro **deepen** (default 20) fa scendere il catalogo di 20 rating sotto
 il minimo attuale ad ogni run (mai sotto `min_overall`, default 45 = tutto il
 database). Con il catalogo già completo, ogni run serve solo ad aggiungere le
 novità settimanali (TOTW, promo, nuovi calciatori).
+
+### Loghi del sito e delle squadre
+
+I loghi sono **incorporati dentro `index.html`** (in base64): nessuna cartella
+immagini da caricare, funzionano anche offline. Compariscono nell'intestazione
+del sito, in classifica, nelle rose, nel tab Squadre e nel Modulo. Le squadre
+**Talento lirico** e **Carisma** non hanno un logo nel pacchetto: al posto
+del logo mostrano un monogramma (la loro iniziale). Per cambiare un logo o
+aggiungerne dei nuovi basta far generare un nuovo `index.html`.
+
+---
+
+## Proteggi le modifiche con una password (GitHub Secrets)
+
+Sì, è possibile: la password vive nei **Secret** del repository (non è mai
+visibile nel codice) e un workflow ne scrive dentro `index.html` solo
+**l'impronta SHA-256** (con salt). Chi non conosce la password vede il sito in
+sola lettura: il pulsante "🔒 Modifica bloccata" compare in alto e ogni
+modifica (giornate, esiti, rose, premi, modulo, import) chiede la password.
+Sbloccata una volta, resta attiva per tutta la sessione del browser.
+
+### Configurazione (3 minuti)
+1. Nel repository: **Settings → Secrets and variables → Actions** →
+   **New repository secret**.
+2. Name: `EDIT_PASSWORD` — Secret: la password che vuoi (es. una frase facile
+   da ricordare). **Save**.
+3. Carica nel repo il file `.github/workflows/apply-password.yml` di questo
+   pacchetto (Add file → Upload files, mantiene le cartelle).
+4. Appena caricato (o ogni volta che modifichi `index.html`) il workflow parte
+   da solo e applica l'hash. Puoi anche lanciarlo a mano:
+   **Actions → Applica password di modifica → Run workflow**.
+
+### Come funziona
+- La password **non viene mai salvata** nel repo: solo il suo hash SHA-256
+  (`sha256("fl-edit-v1|" + password)`), calcolato dal workflow al volo.
+- Per **cambiare password**: aggiorna il secret `EDIT_PASSWORD` e rilancia il
+  workflow (Run workflow) — l'hash viene sostituito.
+- Se il secret non è impostato, il sito resta in modalità modifica libera
+  (comodo per provare, ma pubblicamente modificabile da chiunque abbia il link).
+- Copia locale (`index.html` scaricato e aperto sul tuo PC): modifica sempre
+  libera, nessuna password richiesta.
+- Nota onesta: la protezione è **lato client** — blocca le modifiche
+  accidentali e i visitatori occasionali, ma non è una barriera crittografica
+  contro un esperto (i dati, peraltro, vivono comunque solo nel browser di
+  ciascun visitatore). Usa una password lunga: l'hash è pubblico nel codice.
 
 ---
 
@@ -90,18 +136,24 @@ Fatto. Apri il link: la ricerca carte funziona subito con l'intero catalogo.
 
 ## Hai già il sito online? Aggiorna in 2 minuti (caso fifteen-league esistente)
 
-1. **Sostituisci `fut_scraper.py`** nel repo: Add file → Upload files →
-   trascina il nuovo `fut_scraper.py` di questo pacchetto → Commit changes.
-2. **Sostituisci il workflow**: apri `.github/workflows/update-cards.yml`
+1. **Sostituisci `index.html`** nel repo: Add file → Upload files → trascina il
+   nuovo `index.html` di questo pacchetto → Commit changes.
+   (Porta dentro i loghi del sito e delle squadre + il supporto password.)
+2. **Sostituisci `fut_scraper.py`** nello stesso modo.
+3. **Sostituisci il workflow**: apri `.github/workflows/update-cards.yml`
    nel repo → matita (pencil) → incolla il nuovo contenuto (in fondo a questo
    README) → Commit changes.
    ⚠️ Senza questo passo il lunedì successivo il catalogo tornerebbe a
    essere **rimpiazzato** con poche carte.
-3. (Facoltativo ma consigliato) **Rimpiazza anche `cards.json`** con quello di
+4. **Aggiungi il workflow della password**: Add file → Upload files →
+   trascina `.github/workflows/apply-password.yml` di questo pacchetto.
+   Poi imposta il secret `EDIT_PASSWORD` (sezione qui sopra) se vuoi la
+   protezione: appena caricato `index.html`, il workflow applica l'hash da solo.
+5. (Facoltativo ma consigliato) **Rimpiazza anche `cards.json`** con quello di
    questo pacchetto (~21.700 carte): subito il catalogo completo.
    Se lo salti, il catalogo si completa comunque da solo nel giro di 1–2 run
    grazie al merge + deepen.
-4. Actions → **Aggiorna catalogo carte** → **Run workflow**: da qui in poi il
+6. Actions → **Aggiorna catalogo carte** → **Run workflow**: da qui in poi il
    file cresce e si aggiorna da solo.
 
 ---
@@ -124,6 +176,59 @@ Fatto. Apri il link: la ricerca carte funziona subito con l'intero catalogo.
   ~460 richieste una volta a settimana, un ritmo rispettoso).
 
 ---
+
+## Contenuto di `.github/workflows/apply-password.yml` (da copiare per la password)
+
+```yaml
+name: Applica password di modifica
+
+on:
+  push:
+    paths: ["index.html"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apply-password
+  cancel-in-progress: false
+
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica il repository
+        uses: actions/checkout@v4
+
+      - name: Calcola l'hash della password e iniettalo in index.html
+        env:
+          EDIT_PASSWORD: ${{ secrets.EDIT_PASSWORD }}
+        run: |
+          if [ -z "$EDIT_PASSWORD" ]; then
+            echo "::warning::Secret EDIT_PASSWORD non impostato: index.html resta in modalita modifica libera. Imposta il secret (vedi README, sezione 'Proteggi le modifiche con una password') e rilancia questo workflow."
+            exit 0
+          fi
+          HASH=$(printf '%s' "fl-edit-v1|$EDIT_PASSWORD" | sha256sum | cut -d' ' -f1)
+          sed -i -E "s/let EDIT_PWD_HASH='[^']*'/let EDIT_PWD_HASH='$HASH'/" index.html
+          if ! grep -q "let EDIT_PWD_HASH='$HASH'" index.html; then
+            echo "::error::Non ho trovato la riga EDIT_PWD_HASH in index.html: carica l'ultima versione dell'app."
+            exit 1
+          fi
+          echo "Hash della password iniettato in index.html: $HASH"
+
+      - name: Pubblica (solo se e cambiato qualcosa)
+        run: |
+          if git diff --quiet; then
+            echo "Hash gia aggiornato: nessun commit."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add index.html
+            git commit -m "Applica password di modifica (hash)"
+            git push
+          fi
+```
 
 ## Contenuto di `.github/workflows/update-cards.yml` (da copiare al passo 3)
 
