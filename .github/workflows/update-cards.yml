@@ -1,0 +1,56 @@
+name: Aggiorna catalogo carte
+
+on:
+  schedule:
+    # Ogni lunedì alle 04:00 UTC (06:00 ora italiana) — aggiornamento automatico
+    - cron: "0 4 * * 1"
+  workflow_dispatch:
+    inputs:
+      min_overall:
+        description: "Rating minimo del catalogo (default 78)"
+        required: false
+        default: "78"
+
+permissions:
+  contents: write
+
+jobs:
+  update-cards:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica il repository
+        uses: actions/checkout@v4
+
+      - name: Prepara Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Scarica il catalogo da FutGenie (API pubbliche, senza segreti)
+        run: |
+          python3 fut_scraper.py --dump-all \
+            --min-overall "${{ github.event.inputs.min_overall || '78' }}" \
+            --max-pages 120 --delay 0.6 --year 27 --out cards.json
+
+      - name: Controllo di sicurezza sul catalogo
+        run: |
+          python3 - <<'PY'
+          import json
+          d = json.load(open('cards.json'))
+          n = len(d.get('cards', []))
+          if n < 200:
+              raise SystemExit('Catalogo troppo piccolo (%d carte): probabile problema con FutGenie. Mi fermo per non sovrascrivere il catalogo esistente.' % n)
+          print('Catalogo OK: %d carte' % n)
+          PY
+
+      - name: Pubblica il catalogo aggiornato (il sito si aggiorna da solo)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cards.json
+          if git diff --cached --quiet; then
+            echo "Catalogo invariato: nessun commit."
+          else
+            git commit -m "Aggiorna catalogo carte ($(date -u +%Y-%m-%d))"
+            git push
+          fi
