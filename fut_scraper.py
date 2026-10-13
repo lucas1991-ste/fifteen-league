@@ -586,11 +586,14 @@ def run_futgenie_dump(year, min_overall: int, max_pages: int, delay: float):
 # ----------------------------------------------------------------------------
 
 def dedupe(cards):
+    """Unisce i duplicati della STESSA carta (nome + immagine). Versioni diverse
+    dello stesso giocatore (base, TOTW, promo...) hanno immagini diverse e vengono
+    tutte mantenute, cosi' la ricerca in app le mostra tutte."""
     seen, out = set(), []
     for c in cards:
         if not c:
             continue
-        key = c["name"].lower()
+        key = c["name"].lower() + "|" + c["img"]
         if key in seen:
             continue
         seen.add(key)
