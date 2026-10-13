@@ -9,7 +9,7 @@ senza Python sul tuo computer, senza proxy**.
 | File | A cosa serve |
 |------|--------------|
 | `index.html` | L'app completa (tutto in un file) |
-| `cards.json` | Catalogo iniziale: 1106 giocatori (rating 80–95) con foto carta |
+| `cards.json` | Catalogo completo: **~21.700 carte** (rating 47–95, l'intero database FutGenie) con foto carta |
 | `fut_scraper.py` | Lo scraper che **GitHub** eseguirà per aggiornare il catalogo |
 | `requirements.txt` | Dipendenze opzionali dello scraper (per la strategia futbin, non serve a FutGenie) |
 | `.github/workflows/update-cards.yml` | L'automazione che aggiorna `cards.json` e rideploya il sito |
@@ -20,8 +20,24 @@ senza Python sul tuo computer, senza proxy**.
   dominio → nessun problema CORS, nessun proxy).
 - Le immagini delle carte arrivano dal CDN di FutGenie (`assets.futgenie.gg`).
 - Un'automazione di GitHub ("Actions") rilancia lo scraper ogni lunedì e
-  aggiorna `cards.json`: il sito si aggiorna da solo. Puoi lanciarla anche
-  a mano quando vuoi.
+  **aggiunge** a `cards.json` tutte le carte nuove pubblicate nel frattempo:
+  il file cresce nel tempo e non perde mai carte. Puoi lanciarla anche a mano.
+
+### Il catalogo cresce, non si rimpiazza (merge incrementale)
+
+Ad ogni esecuzione il workflow:
+1. **legge** il `cards.json` esistente e **mantiene tutte le carte** già presenti;
+2. riscarica il database FutGenie fino al rating previsto e **aggiunge solo le
+   carte nuove** (una carta è "la stessa" se ha stesso nome + stessa immagine:
+   le diverse versioni — base, TOTW, promo — restano tutte);
+3. **non può mai accorciare** il catalogo: se il nuovo merge avesse meno carte
+   di prima, il job fallisce senza pubblicare nulla (controllo di sicurezza);
+4. committa il file aggiornato solo se è davvero cambiato.
+
+Il parametro **deepen** (default 20) fa scendere il catalogo di 20 rating sotto
+il minimo attuale ad ogni run (mai sotto `min_overall`, default 45 = tutto il
+database). Con il catalogo già completo, ogni run serve solo ad aggiungere le
+novità settimanali (TOTW, promo, nuovi calciatori).
 
 ---
 
@@ -58,16 +74,35 @@ senza Python sul tuo computer, senza proxy**.
 4. Aspetta 1–2 minuti e ricarica la pagina: troverai il link del tuo sito:
    `https://TUONOME.github.io/fifteen-league/`
 
-Fatto. Apri il link: la ricerca carte funziona subito con 1106 giocatori.
+Fatto. Apri il link: la ricerca carte funziona subito con l'intero catalogo.
 
 ### 5 — Aggiornare il catalogo (quando vuoi / ogni lunedì automatico)
 - Manuale: nel repository → scheda **Actions** →
   **Aggiorna catalogo carte** → **Run workflow** → **Run workflow** (verde).
-  In ~3–5 minuti `cards.json` viene rigenerato (rating 78+, oltre 3000 carte)
-  e il sito si aggiorna da solo.
+  In ~5–8 minuti il catalogo viene **unito** (mantenute le esistenti, aggiunte
+  le nuove) e il sito si aggiorna da solo. Nel riepilogo del run vedi quante
+  carte sono state aggiunte.
 - Automatico: il workflow gira ogni lunedì alle 06:00 ora italiana.
-- Se FutGenie avesse problemi, un controllo di sicurezza impedisce di
-  sovrascrivere il catalogo con uno vuoto.
+- Doppi controlli di sicurezza: catalogo sotto le 200 carte O meno carte di
+  prima → il job si ferma senza sovrascrivere nulla.
+
+---
+
+## Hai già il sito online? Aggiorna in 2 minuti (caso fifteen-league esistente)
+
+1. **Sostituisci `fut_scraper.py`** nel repo: Add file → Upload files →
+   trascina il nuovo `fut_scraper.py` di questo pacchetto → Commit changes.
+2. **Sostituisci il workflow**: apri `.github/workflows/update-cards.yml`
+   nel repo → matita (pencil) → incolla il nuovo contenuto (in fondo a questo
+   README) → Commit changes.
+   ⚠️ Senza questo passo il lunedì successivo il catalogo tornerebbe a
+   essere **rimpiazzato** con poche carte.
+3. (Facoltativo ma consigliato) **Rimpiazza anche `cards.json`** con quello di
+   questo pacchetto (~21.700 carte): subito il catalogo completo.
+   Se lo salti, il catalogo si completa comunque da solo nel giro di 1–2 run
+   grazie al merge + deepen.
+4. Actions → **Aggiorna catalogo carte** → **Run workflow**: da qui in poi il
+   file cresce e si aggiorna da solo.
 
 ---
 
@@ -77,13 +112,16 @@ Fatto. Apri il link: la ricerca carte funziona subito con 1106 giocatori.
   (localStorage del dominio). Nessun server li conserva: usa **Esporta DB**
   (menu in alto) per fare backup o spostare i dati su un altro dispositivo,
   e **Importa** per ripristinarli.
+- **Il DB carte locale** (carte che aggiungi alle rose) resta tuo: il catalogo
+  online è solo una vetrina di ricerca. Le carte che usi vengono copiate nel
+  DB locale e restano disponibili anche offline.
 - **`fut_proxy.py` non serve più**: era solo per aggirare il CORS da file
   locale. Con il sito online il catalogo arriva dalla pagina stessa.
 - La ricerca "Live FutGenie" resta come extra facoltativo (utile solo se
   servisse una carta fuori catalogo), ma non è necessaria.
 - Le immagini sono caricate dal CDN di FutGenie: serve una connessione internet.
 - Usa il catalogo per uso personale e con richieste limitate (il workflow fa
-  ~120 richieste a settimana, un ritmo rispettoso).
+  ~460 richieste una volta a settimana, un ritmo rispettoso).
 
 ---
 
@@ -99,9 +137,17 @@ on:
   workflow_dispatch:
     inputs:
       min_overall:
-        description: "Rating minimo del catalogo (default 78)"
+        description: "Rating minimo del catalogo (default 45 = tutto il database FutGenie)"
         required: false
-        default: "78"
+        default: "45"
+      deepen:
+        description: "Punti sotto il rating minimo attuale da raggiungere ad ogni run (default 20)"
+        required: false
+        default: "20"
+      max_pages:
+        description: "Pagine massime da scaricare (48 carte per pagina; il DB completo è ~460)"
+        required: false
+        default: "500"
 
 permissions:
   contents: write
@@ -118,21 +164,62 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Scarica il catalogo da FutGenie (API pubbliche, senza segreti)
+      - name: Conta le carte attuali (per il controllo di sicurezza)
         run: |
-          python3 fut_scraper.py --dump-all \
-            --min-overall "${{ github.event.inputs.min_overall || '78' }}" \
-            --max-pages 120 --delay 0.6 --year 27 --out cards.json
+          python3 - <<'PY'
+          import json, os
+          n = 0
+          if os.path.exists('cards.json'):
+              try:
+                  n = len(json.load(open('cards.json')).get('cards', []))
+              except Exception:
+                  n = 0
+          open('/tmp/count_before.txt', 'w').write(str(n))
+          print('Carte nel catalogo attuale:', n)
+          PY
 
-      - name: Controllo di sicurezza sul catalogo
+      - name: Aggiorna il catalogo (merge incrementale — mantiene le esistenti, aggiunge le nuove)
+        run: |
+          python3 fut_scraper.py --dump-all --merge \
+            --min-overall "${{ github.event.inputs.min_overall || '45' }}" \
+            --deepen "${{ github.event.inputs.deepen || '20' }}" \
+            --max-pages "${{ github.event.inputs.max_pages || '500' }}" \
+            --delay 0.35 --year 27 --out cards.json
+
+      - name: Controllo di sicurezza (il catalogo non può accorciarsi)
         run: |
           python3 - <<'PY'
           import json
-          d = json.load(open('cards.json'))
-          n = len(d.get('cards', []))
+          before = int(open('/tmp/count_before.txt').read().strip() or '0')
+          n = len(json.load(open('cards.json')).get('cards', []))
           if n < 200:
               raise SystemExit('Catalogo troppo piccolo (%d carte): probabile problema con FutGenie. Mi fermo per non sovrascrivere il catalogo esistente.' % n)
-          print('Catalogo OK: %d carte' % n)
+          if before and n < before:
+              raise SystemExit('Il catalogo si è accorciato (%d -> %d): merge fallito. Mi fermo.' % (before, n))
+          print('Catalogo OK: %d carte (prima: %d)' % (n, before))
+          PY
+
+      - name: Riepilogo nel log del job
+        run: |
+          python3 - <<'PY'
+          import json, os
+          d = json.load(open('cards.json'))
+          cards = d.get('cards', [])
+          before = int(open('/tmp/count_before.txt').read().strip() or '0')
+          ratings = [c.get('rating') or 0 for c in cards]
+          lines = [
+              '## Catalogo aggiornato',
+              '',
+              '- Carte totali: **%d**' % len(cards),
+              '- Range rating: %d–%d' % (min(ratings), max(ratings)),
+              '- Nuove carte aggiunte in questo run: **%d**' % (len(cards) - before),
+              '',
+              'Il sito (GitHub Pages) usa questo file automaticamente.',
+          ]
+          if os.environ.get('GITHUB_STEP_SUMMARY'):
+              with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+                  f.write('\n'.join(lines) + '\n')
+          print('\n'.join(lines))
           PY
 
       - name: Pubblica il catalogo aggiornato (il sito si aggiorna da solo)

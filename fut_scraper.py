@@ -441,149 +441,22 @@ def run_futgenie_dump(year, min_overall: int, max_pages: int, delay: float):
 
 
 # ----------------------------------------------------------------------------
-# S5: FutGenie — API pubbliche senza Cloudflare (strategia principale)
-# ----------------------------------------------------------------------------
-
-def plain_get(url: str, timeout=20, head=False):
-    """GET/HEAD con urllib (stdlib, zero dipendenze). Ritorna (status, body)."""
-    import urllib.request
-    req = urllib.request.Request(url, headers={
-        "User-Agent": UA,
-        "Accept": "image/png,*/*" if head else "application/json,text/html;q=0.9,*/*;q=0.8",
-        "Accept-Language": "it-IT,it;q=0.9,en;q=0.8",
-    }, method="HEAD" if head else "GET")
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            data = b"" if head else r.read()
-            return r.status, (data.decode("utf-8", errors="ignore") if data else "")
-    except urllib.error.HTTPError as e:
-        return e.code, ""
-    except Exception:
-        return 0, ""
-
-
-def _pick_best_suggestion(sugg, term: str):
-    """Sceglie il miglior match: esatto > inizio nome > contenuto, poi rating alto."""
-    tl = term.strip().lower()
-
-    def rank(s):
-        cn = (s.get("cardName") or s.get("name") or "").lower()
-        fn = (s.get("name") or "").lower()
-        ov = int(s.get("overall") or 0)
-        if cn == tl or fn == tl:
-            return (0, -ov)
-        if cn.startswith(tl) or fn.startswith(tl):
-            return (1, -ov)
-        if tl in cn or tl in fn:
-            return (2, -ov)
-        return (3, -ov)
-
-    return sorted(sugg, key=rank)[0]
-
-
-def run_futgenie(term: str, year, delay: float, with_details=True):
-    """Cerca un giocatore su FutGenie: nome/rating/posizione dall'API di ricerca,
-    immagine carta dal CDN, club/nazione/tipo dalla pagina dettaglio."""
-    from urllib.parse import quote_plus
-    st, body = plain_get(FUTGENIE_SUGGEST.format(term=quote_plus(term), year=year))
-    if st != 200:
-        log(f"[S5] futgenie: ricerca non disponibile (HTTP {st})")
-        return []
-    try:
-        sugg = json.loads(body)
-    except Exception:
-        log("[S5] futgenie: risposta ricerca non valida")
-        return []
-    if not sugg:
-        log(f"[S5] futgenie: nessun risultato per '{term}'")
-        return []
-
-    best = _pick_best_suggestion(sugg, term)
-    pid = best.get("id")
-    cname = best.get("cardName") or best.get("name") or term
-    overall = best.get("overall", "")
-    pos = best.get("position", "")
-
-    img = FUTGENIE_CARD_IMG.format(id=pid)
-    st_img, _ = plain_get(img, head=True)
-    if st_img != 200:
-        img = FUTGENIE_BASE + "/api/card-images/" + str(pid)
-
-    club = nation = ctype = ""
-    if with_details:
-        time.sleep(min(delay, 1.5) + random.uniform(0, 0.4))
-        st_d, html = plain_get(FUTGENIE_ITEM_PAGE.format(id=pid), timeout=25)
-        if st_d == 200 and html:
-            found = {}
-            for kind, _bid, label in FUTGENIE_BADGE_RE.findall(html):
-                found.setdefault(kind, norm_text(label))
-            ctype = found.get("rarityIds", "")
-            club = found.get("clubIds", "")
-            nation = found.get("nationIds", "")
-
-    extra = " · ".join(x for x in (club, nation, ctype) if x)
-    log(f"[S5] futgenie: '{term}' -> {cname} {overall} {pos}"
-        + (f" ({extra})" if extra else "")
-        + (" [img OK]" if st_img == 200 else " [img da verificare]"))
-    card = make_card(cname, overall, pos, club, nation, ctype, img)
-    return [card] if card else []
-
-
-def run_futgenie_dump(year, min_overall: int, max_pages: int, delay: float):
-    """Scarica in blocco il database FutGenie (ordinato per rating decrescente)
-    fermandosi sotto la soglia --min-overall. Usa /api/players/filters per
-    convertire gli id di club/nazione in nomi."""
-    maps = {"clubIds": {}, "nationIds": {}}
-    st, body = plain_get(FUTGENIE_FILTERS.format(year=year), timeout=40)
-    if st == 200:
-        try:
-            f = json.loads(body)
-            maps["clubIds"] = {c.get("id"): c.get("name", "") for c in f.get("clubs", []) or []}
-            maps["nationIds"] = {n.get("id"): n.get("name", "") for n in f.get("nations", []) or []}
-            log(f"[S5] filtri caricati: {len(maps['clubIds'])} club, {len(maps['nationIds'])} nazioni")
-        except Exception:
-            log("[S5] filtri non leggibili (continuo senza club/nazione)")
-
-    cards, page, stopped = [], 1, False
-    while page <= max_pages:
-        st, body = plain_get(FUTGENIE_PLAYERS.format(page=page, year=year))
-        if st != 200:
-            log(f"[S5] dump: pagina {page} HTTP {st}, mi fermo")
-            break
-        try:
-            d = json.loads(body)
-        except Exception:
-            break
-        ps = d.get("players", [])
-        if not ps:
-            break
-        for p in ps:
-            ov = int(p.get("overall") or 0)
-            if min_overall and ov < min_overall:
-                stopped = True
-                break
-            pl = p.get("player") or {}
-            cards.append(make_card(
-                pl.get("cardName") or pl.get("name"),
-                ov, p.get("position", ""),
-                maps["clubIds"].get(p.get("teamId"), ""),
-                maps["nationIds"].get(p.get("nationId"), ""),
-                "",
-                FUTGENIE_CARD_IMG.format(id=p.get("id"))))
-        if stopped:
-            break
-        log(f"[S5] dump: pagina {page} ok ({len(cards)} carte finora)")
-        if not d.get("hasMore"):
-            break
-        page += 1
-        time.sleep(delay)
-    log(f"[S5] dump completato: {len(cards)} carte (soglia overall {min_overall})")
-    return dedupe(cards)
-
-
-# ----------------------------------------------------------------------------
 # util
 # ----------------------------------------------------------------------------
+
+def _rate(c):
+    """Rating numerico di una carta (0 se mancante/non valido)."""
+    try:
+        return int(str(c.get("rating") or 0).strip() or 0)
+    except (TypeError, ValueError):
+        return 0
+
+
+def cat_key(c):
+    """Chiave unica di una carta: nome + immagine. Due carte con stessa immagine
+    sono la stessa carta; versioni diverse (base/TOTW/promo) restano distinte."""
+    return (str(c.get("name", "")).lower(), str(c.get("img", "")))
+
 
 def dedupe(cards):
     """Unisce i duplicati della STESSA carta (nome + immagine). Versioni diverse
@@ -599,6 +472,17 @@ def dedupe(cards):
         seen.add(key)
         out.append(c)
     return out
+
+
+def merge_catalog(old_cards, new_cards):
+    """Merge incrementale: mantiene TUTTE le carte esistenti e aggiunge solo le
+    nuove (stessa carta = stesso nome + stessa immagine). Il catalogo cresce
+    run dopo run e non perde mai carte. Ritorna (lista_unita, n_nuove)."""
+    old_cards = [c for c in old_cards if c]
+    old_keys = {cat_key(c) for c in old_cards}
+    fresh = [c for c in new_cards if c and cat_key(c) not in old_keys]
+    merged = sorted(dedupe(old_cards + fresh), key=lambda c: -_rate(c))
+    return merged, len(fresh)
 
 
 def load_existing(out_path: str):
@@ -624,9 +508,15 @@ def main():
     ap.add_argument("--dump-all", action="store_true",
                     help="scarica in blocco il DB FutGenie fino a --min-overall (senza ricerca per nome)")
     ap.add_argument("--min-overall", type=int, default=80,
-                    help="rating minimo per --dump-all (default 80)")
+                    help="rating minimo (pavimento) per --dump-all: mai scaricato sotto "
+                         "questo valore (default 80; 45 = tutto il database FutGenie)")
     ap.add_argument("--max-pages", type=int, default=40,
-                    help="pagine massime per --dump-all (default 40, ~48 carte per pagina)")
+                    help="pagine massime per --dump-all (default 40, ~48 carte per pagina; "
+                         "il DB completo e' ~460 pagine)")
+    ap.add_argument("--deepen", type=int, default=0,
+                    help="con --dump-all --merge: scende di N punti sotto il rating minimo "
+                         "del catalogo esistente (mai sotto --min-overall). "
+                         "0 = usa solo --min-overall. Attiva --merge automaticamente")
     ap.add_argument("--no-details", action="store_true",
                     help="salta la pagina dettaglio FutGenie (piu' veloce, senza club/nazione)")
     ap.add_argument("--year", default="27", help="anno del gioco (default 27)")
@@ -646,7 +536,18 @@ def main():
     if args.offline:
         cards = run_offline(args.offline)
     elif args.dump_all:
-        cards = run_futgenie_dump(args.year, args.min_overall, args.max_pages, args.delay)
+        floor = args.min_overall
+        effective = floor
+        if args.deepen > 0:
+            args.merge = True
+            prev = load_existing(args.out)
+            if prev:
+                cur_min = min(_rate(c) for c in prev)
+                if cur_min > 0:
+                    effective = max(floor, cur_min - args.deepen)
+                    log(f"[S5] approfondimento: catalogo attuale arriva a rating {cur_min} "
+                        f"-> questa passata scarico fino a {effective}")
+        cards = run_futgenie_dump(args.year, effective, args.max_pages, args.delay)
     else:
         if not names:
             ap.print_help()
@@ -669,8 +570,10 @@ def main():
         cards = dedupe(cards)
 
     if args.merge:
-        merged = dedupe(load_existing(args.out) + cards)
-        cards = merged
+        old_cards = load_existing(args.out)
+        cards, n_new = merge_catalog(old_cards, cards)
+        log(f"[merge] mantenute {len(old_cards)} carte esistenti · "
+            f"aggiunte {n_new} nuove · totale {len(cards)}")
 
     payload = {"format": "fifteen-league-cards", "version": 1,
                "exportedAt": time.strftime("%Y-%m-%dT%H:%M:%S"), "cards": cards}
