@@ -7,9 +7,17 @@ on:
   workflow_dispatch:
     inputs:
       min_overall:
-        description: "Rating minimo del catalogo (default 78)"
+        description: "Rating minimo del catalogo (default 45 = tutto il database FutGenie)"
         required: false
-        default: "78"
+        default: "45"
+      deepen:
+        description: "Punti sotto il rating minimo attuale da raggiungere ad ogni run (default 20)"
+        required: false
+        default: "20"
+      max_pages:
+        description: "Pagine massime da scaricare (48 carte per pagina; il DB completo è ~460)"
+        required: false
+        default: "500"
 
 permissions:
   contents: write
@@ -26,21 +34,62 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Scarica il catalogo da FutGenie (API pubbliche, senza segreti)
+      - name: Conta le carte attuali (per il controllo di sicurezza)
         run: |
-          python3 fut_scraper.py --dump-all \
-            --min-overall "${{ github.event.inputs.min_overall || '78' }}" \
-            --max-pages 120 --delay 0.6 --year 27 --out cards.json
+          python3 - <<'PY'
+          import json, os
+          n = 0
+          if os.path.exists('cards.json'):
+              try:
+                  n = len(json.load(open('cards.json')).get('cards', []))
+              except Exception:
+                  n = 0
+          open('/tmp/count_before.txt', 'w').write(str(n))
+          print('Carte nel catalogo attuale:', n)
+          PY
 
-      - name: Controllo di sicurezza sul catalogo
+      - name: Aggiorna il catalogo (merge incrementale — mantiene le esistenti, aggiunge le nuove)
+        run: |
+          python3 fut_scraper.py --dump-all --merge \
+            --min-overall "${{ github.event.inputs.min_overall || '45' }}" \
+            --deepen "${{ github.event.inputs.deepen || '20' }}" \
+            --max-pages "${{ github.event.inputs.max_pages || '500' }}" \
+            --delay 0.35 --year 27 --out cards.json
+
+      - name: Controllo di sicurezza (il catalogo non può accorciarsi)
         run: |
           python3 - <<'PY'
           import json
-          d = json.load(open('cards.json'))
-          n = len(d.get('cards', []))
+          before = int(open('/tmp/count_before.txt').read().strip() or '0')
+          n = len(json.load(open('cards.json')).get('cards', []))
           if n < 200:
               raise SystemExit('Catalogo troppo piccolo (%d carte): probabile problema con FutGenie. Mi fermo per non sovrascrivere il catalogo esistente.' % n)
-          print('Catalogo OK: %d carte' % n)
+          if before and n < before:
+              raise SystemExit('Il catalogo si è accorciato (%d -> %d): merge fallito. Mi fermo.' % (before, n))
+          print('Catalogo OK: %d carte (prima: %d)' % (n, before))
+          PY
+
+      - name: Riepilogo nel log del job
+        run: |
+          python3 - <<'PY'
+          import json, os
+          d = json.load(open('cards.json'))
+          cards = d.get('cards', [])
+          before = int(open('/tmp/count_before.txt').read().strip() or '0')
+          ratings = [c.get('rating') or 0 for c in cards]
+          lines = [
+              '## Catalogo aggiornato',
+              '',
+              '- Carte totali: **%d**' % len(cards),
+              '- Range rating: %d–%d' % (min(ratings), max(ratings)),
+              '- Nuove carte aggiunte in questo run: **%d**' % (len(cards) - before),
+              '',
+              'Il sito (GitHub Pages) usa questo file automaticamente.',
+          ]
+          if os.environ.get('GITHUB_STEP_SUMMARY'):
+              with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+                  f.write('\n'.join(lines) + '\n')
+          print('\n'.join(lines))
           PY
 
       - name: Pubblica il catalogo aggiornato (il sito si aggiorna da solo)
