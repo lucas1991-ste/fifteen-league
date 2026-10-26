@@ -1,7 +1,7 @@
 {
   "format": "fifteen-league-cards",
   "version": 1,
-  "exportedAt": "2026-10-19T09:29:08",
+  "exportedAt": "2026-10-26T09:33:11",
   "cards": [
     {
       "name": "Pelé",
@@ -769,6 +769,15 @@
       "img": "https://assets.futgenie.gg/cards/1032250.png"
     },
     {
+      "name": "Lamine Yamal",
+      "rating": 91,
+      "pos": "RW",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032350.png"
+    },
+    {
       "name": "Pedri",
       "rating": 90,
       "pos": "CM",
@@ -1451,6 +1460,24 @@
       "nation": "Brazil",
       "type": "",
       "img": "https://assets.futgenie.gg/cards/1032181.png"
+    },
+    {
+      "name": "Raphinha",
+      "rating": 90,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Brazil",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032369.png"
+    },
+    {
+      "name": "Raphinha",
+      "rating": 90,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Brazil",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032367.png"
     },
     {
       "name": "Sánchez",
@@ -2576,6 +2603,96 @@
       "nation": "England",
       "type": "",
       "img": "https://assets.futgenie.gg/cards/1032238.png"
+    },
+    {
+      "name": "Cristiano Ronaldo",
+      "rating": 89,
+      "pos": "LW",
+      "club": "",
+      "nation": "Portugal",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032387.png"
+    },
+    {
+      "name": "Díaz",
+      "rating": 89,
+      "pos": "LM",
+      "club": "",
+      "nation": "Colombia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032307.png"
+    },
+    {
+      "name": "Zola",
+      "rating": 89,
+      "pos": "ST",
+      "club": "",
+      "nation": "Italy",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032366.png"
+    },
+    {
+      "name": "Díaz",
+      "rating": 89,
+      "pos": "LM",
+      "club": "",
+      "nation": "Colombia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032432.png"
+    },
+    {
+      "name": "Díaz",
+      "rating": 89,
+      "pos": "LM",
+      "club": "",
+      "nation": "Colombia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032430.png"
+    },
+    {
+      "name": "Zola",
+      "rating": 89,
+      "pos": "ST",
+      "club": "",
+      "nation": "Italy",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032370.png"
+    },
+    {
+      "name": "Patri Guijarro",
+      "rating": 89,
+      "pos": "CM",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032349.png"
+    },
+    {
+      "name": "Pubill",
+      "rating": 89,
+      "pos": "CB",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032347.png"
+    },
+    {
+      "name": "Díaz",
+      "rating": 89,
+      "pos": "LM",
+      "club": "",
+      "nation": "Colombia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032305.png"
+    },
+    {
+      "name": "Cristiano Ronaldo",
+      "rating": 89,
+      "pos": "LW",
+      "club": "",
+      "nation": "Portugal",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032386.png"
     },
     {
       "name": "Marquinhos",
@@ -4081,6 +4198,69 @@
       "img": "https://assets.futgenie.gg/cards/1032198.png"
     },
     {
+      "name": "Szoboszlai",
+      "rating": 88,
+      "pos": "RB",
+      "club": "",
+      "nation": "Hungary",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032355.png"
+    },
+    {
+      "name": "Nico Paz",
+      "rating": 88,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Argentina",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032442.png"
+    },
+    {
+      "name": "Szoboszlai",
+      "rating": 88,
+      "pos": "RB",
+      "club": "",
+      "nation": "Hungary",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032368.png"
+    },
+    {
+      "name": "Mastantuono",
+      "rating": 88,
+      "pos": "RM",
+      "club": "",
+      "nation": "Argentina",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032345.png"
+    },
+    {
+      "name": "Nico Paz",
+      "rating": 88,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Argentina",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032437.png"
+    },
+    {
+      "name": "Salma Paralluelo",
+      "rating": 88,
+      "pos": "ST",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032381.png"
+    },
+    {
+      "name": "Stam",
+      "rating": 88,
+      "pos": "CDM",
+      "club": "",
+      "nation": "Netherlands",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032364.png"
+    },
+    {
       "name": "Jacobo Ramón",
       "rating": 87,
       "pos": "CB",
@@ -4997,6 +5177,114 @@
       "nation": "France",
       "type": "",
       "img": "https://assets.futgenie.gg/cards/1032253.png"
+    },
+    {
+      "name": "Brown",
+      "rating": 87,
+      "pos": "LB",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032348.png"
+    },
+    {
+      "name": "Foden",
+      "rating": 87,
+      "pos": "RW",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032439.png"
+    },
+    {
+      "name": "Fabinho",
+      "rating": 87,
+      "pos": "CB",
+      "club": "",
+      "nation": "Brazil",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032360.png"
+    },
+    {
+      "name": "Foden",
+      "rating": 87,
+      "pos": "RW",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032440.png"
+    },
+    {
+      "name": "Mandžukić",
+      "rating": 87,
+      "pos": "LW",
+      "club": "",
+      "nation": "Croatia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032385.png"
+    },
+    {
+      "name": "Verón",
+      "rating": 87,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Argentina",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032354.png"
+    },
+    {
+      "name": "Mandžukić",
+      "rating": 87,
+      "pos": "LW",
+      "club": "",
+      "nation": "Croatia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032382.png"
+    },
+    {
+      "name": "Fabinho",
+      "rating": 87,
+      "pos": "CB",
+      "club": "",
+      "nation": "Brazil",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032362.png"
+    },
+    {
+      "name": "Palmer",
+      "rating": 87,
+      "pos": "RW",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032361.png"
+    },
+    {
+      "name": "Palmer",
+      "rating": 87,
+      "pos": "RW",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032357.png"
+    },
+    {
+      "name": "Scott",
+      "rating": 87,
+      "pos": "CB",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032363.png"
+    },
+    {
+      "name": "Salah",
+      "rating": 87,
+      "pos": "RM",
+      "club": "",
+      "nation": "Egypt",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032353.png"
     },
     {
       "name": "Park Ji Sung",
@@ -6374,6 +6662,159 @@
       "nation": "Bosnia Herzegovina",
       "type": "",
       "img": "https://assets.futgenie.gg/cards/1032180.png"
+    },
+    {
+      "name": "Guirassy",
+      "rating": 86,
+      "pos": "ST",
+      "club": "",
+      "nation": "Guinea",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032443.png"
+    },
+    {
+      "name": "James",
+      "rating": 86,
+      "pos": "ST",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032298.png"
+    },
+    {
+      "name": "Swanson",
+      "rating": 86,
+      "pos": "LM",
+      "club": "",
+      "nation": "United States",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032330.png"
+    },
+    {
+      "name": "James",
+      "rating": 86,
+      "pos": "ST",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032393.png"
+    },
+    {
+      "name": "Çalhanoğlu",
+      "rating": 86,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Türkiye",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032390.png"
+    },
+    {
+      "name": "Tolisso",
+      "rating": 86,
+      "pos": "CAM",
+      "club": "",
+      "nation": "France",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032376.png"
+    },
+    {
+      "name": "James",
+      "rating": 86,
+      "pos": "ST",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032268.png"
+    },
+    {
+      "name": "Le Fée",
+      "rating": 86,
+      "pos": "LM",
+      "club": "Toulouse FC",
+      "nation": "France",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032379.png"
+    },
+    {
+      "name": "Rashford",
+      "rating": 86,
+      "pos": "LW",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032329.png"
+    },
+    {
+      "name": "Kondogbia",
+      "rating": 86,
+      "pos": "CB",
+      "club": "",
+      "nation": "CAR",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032378.png"
+    },
+    {
+      "name": "Vobian",
+      "rating": 86,
+      "pos": "LM",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032388.png"
+    },
+    {
+      "name": "Tolisso",
+      "rating": 86,
+      "pos": "CAM",
+      "club": "",
+      "nation": "France",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032374.png"
+    },
+    {
+      "name": "Çalhanoğlu",
+      "rating": 86,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Türkiye",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032391.png"
+    },
+    {
+      "name": "Vobian",
+      "rating": 86,
+      "pos": "LM",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032389.png"
+    },
+    {
+      "name": "Guirassy",
+      "rating": 86,
+      "pos": "ST",
+      "club": "",
+      "nation": "Guinea",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032441.png"
+    },
+    {
+      "name": "Kondogbia",
+      "rating": 86,
+      "pos": "CB",
+      "club": "",
+      "nation": "CAR",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032372.png"
+    },
+    {
+      "name": "Alajbegović",
+      "rating": 86,
+      "pos": "LW",
+      "club": "",
+      "nation": "Bosnia Herzegovina",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032346.png"
     },
     {
       "name": "Bisseck",
@@ -7924,6 +8365,312 @@
       "img": "https://assets.futgenie.gg/cards/1032256.png"
     },
     {
+      "name": "Alonso",
+      "rating": 85,
+      "pos": "LB",
+      "club": "",
+      "nation": "Paraguay",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032375.png"
+    },
+    {
+      "name": "Olga Carmona",
+      "rating": 85,
+      "pos": "LB",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032317.png"
+    },
+    {
+      "name": "Fekir",
+      "rating": 85,
+      "pos": "CAM",
+      "club": "",
+      "nation": "France",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032332.png"
+    },
+    {
+      "name": "Rolfö",
+      "rating": 85,
+      "pos": "CM",
+      "club": "",
+      "nation": "Sweden",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032339.png"
+    },
+    {
+      "name": "Silas",
+      "rating": 85,
+      "pos": "ST",
+      "club": "",
+      "nation": "DR Congo",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032325.png"
+    },
+    {
+      "name": "Athenea",
+      "rating": 85,
+      "pos": "RW",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032321.png"
+    },
+    {
+      "name": "Diomande",
+      "rating": 85,
+      "pos": "LW",
+      "club": "",
+      "nation": "Ivory Coast",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032419.png"
+    },
+    {
+      "name": "Diomande",
+      "rating": 85,
+      "pos": "LW",
+      "club": "",
+      "nation": "Ivory Coast",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032287.png"
+    },
+    {
+      "name": "Chong",
+      "rating": 85,
+      "pos": "RM",
+      "club": "",
+      "nation": "Netherlands Antilles",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032356.png"
+    },
+    {
+      "name": "Flint",
+      "rating": 85,
+      "pos": "CB",
+      "club": "",
+      "nation": "United States",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032373.png"
+    },
+    {
+      "name": "Oyarzabal",
+      "rating": 85,
+      "pos": "ST",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032413.png"
+    },
+    {
+      "name": "Oyarzabal",
+      "rating": 85,
+      "pos": "ST",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032281.png"
+    },
+    {
+      "name": "Seys",
+      "rating": 85,
+      "pos": "LB",
+      "club": "",
+      "nation": "Belgium",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032438.png"
+    },
+    {
+      "name": "Griezmann",
+      "rating": 85,
+      "pos": "CAM",
+      "club": "",
+      "nation": "France",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032273.png"
+    },
+    {
+      "name": "Çalhanoğlu",
+      "rating": 85,
+      "pos": "CDM",
+      "club": "",
+      "nation": "Türkiye",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032337.png"
+    },
+    {
+      "name": "Alonso",
+      "rating": 85,
+      "pos": "LB",
+      "club": "",
+      "nation": "Paraguay",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032377.png"
+    },
+    {
+      "name": "Seys",
+      "rating": 85,
+      "pos": "LB",
+      "club": "",
+      "nation": "Belgium",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032436.png"
+    },
+    {
+      "name": "Mendy",
+      "rating": 85,
+      "pos": "LB",
+      "club": "",
+      "nation": "France",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032338.png"
+    },
+    {
+      "name": "Diomande",
+      "rating": 85,
+      "pos": "LW",
+      "club": "",
+      "nation": "Ivory Coast",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032285.png"
+    },
+    {
+      "name": "Mor",
+      "rating": 85,
+      "pos": "ST",
+      "club": "",
+      "nation": "Türkiye",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032435.png"
+    },
+    {
+      "name": "Saint-Maximin",
+      "rating": 85,
+      "pos": "LW",
+      "club": "",
+      "nation": "France",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032334.png"
+    },
+    {
+      "name": "Sánchez",
+      "rating": 85,
+      "pos": "ST",
+      "club": "",
+      "nation": "Chile",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032335.png"
+    },
+    {
+      "name": "Oyarzabal",
+      "rating": 85,
+      "pos": "ST",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032417.png"
+    },
+    {
+      "name": "Griezmann",
+      "rating": 85,
+      "pos": "CAM",
+      "club": "",
+      "nation": "France",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032395.png"
+    },
+    {
+      "name": "El Mala",
+      "rating": 85,
+      "pos": "ST",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032365.png"
+    },
+    {
+      "name": "Griezmann",
+      "rating": 85,
+      "pos": "CAM",
+      "club": "",
+      "nation": "France",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032351.png"
+    },
+    {
+      "name": "Lukeba",
+      "rating": 85,
+      "pos": "LB",
+      "club": "",
+      "nation": "France",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032383.png"
+    },
+    {
+      "name": "Oyarzabal",
+      "rating": 85,
+      "pos": "ST",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032283.png"
+    },
+    {
+      "name": "Ferran Torres",
+      "rating": 85,
+      "pos": "ST",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032341.png"
+    },
+    {
+      "name": "Lukeba",
+      "rating": 85,
+      "pos": "LB",
+      "club": "",
+      "nation": "France",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032384.png"
+    },
+    {
+      "name": "Flint",
+      "rating": 85,
+      "pos": "CB",
+      "club": "",
+      "nation": "United States",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032371.png"
+    },
+    {
+      "name": "Chong",
+      "rating": 85,
+      "pos": "RM",
+      "club": "",
+      "nation": "Netherlands Antilles",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032358.png"
+    },
+    {
+      "name": "Woltemade",
+      "rating": 85,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032359.png"
+    },
+    {
+      "name": "Griezmann",
+      "rating": 85,
+      "pos": "CAM",
+      "club": "",
+      "nation": "France",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032397.png"
+    },
+    {
       "name": "Memeti",
       "rating": 84,
       "pos": "RM",
@@ -9310,6 +10057,213 @@
       "img": "https://assets.futgenie.gg/cards/1032260.png"
     },
     {
+      "name": "Insigne",
+      "rating": 84,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Italy",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032328.png"
+    },
+    {
+      "name": "Allan",
+      "rating": 84,
+      "pos": "CDM",
+      "club": "",
+      "nation": "Brazil",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032324.png"
+    },
+    {
+      "name": "da Costa",
+      "rating": 84,
+      "pos": "CB",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032323.png"
+    },
+    {
+      "name": "Werner",
+      "rating": 84,
+      "pos": "LM",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032322.png"
+    },
+    {
+      "name": "Brand",
+      "rating": 84,
+      "pos": "LW",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032333.png"
+    },
+    {
+      "name": "Bowen",
+      "rating": 84,
+      "pos": "RM",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032401.png"
+    },
+    {
+      "name": "Areola",
+      "rating": 84,
+      "pos": "GK",
+      "club": "",
+      "nation": "France",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032326.png"
+    },
+    {
+      "name": "De Gea",
+      "rating": 84,
+      "pos": "GK",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032340.png"
+    },
+    {
+      "name": "St. Juste",
+      "rating": 84,
+      "pos": "CB",
+      "club": "",
+      "nation": "Netherlands",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032336.png"
+    },
+    {
+      "name": "Witsel",
+      "rating": 84,
+      "pos": "CDM",
+      "club": "",
+      "nation": "Belgium",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032352.png"
+    },
+    {
+      "name": "Rader",
+      "rating": 84,
+      "pos": "CAM",
+      "club": "",
+      "nation": "United States",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032312.png"
+    },
+    {
+      "name": "Johnson",
+      "rating": 84,
+      "pos": "LB",
+      "club": "",
+      "nation": "United States",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032263.png"
+    },
+    {
+      "name": "Bowen",
+      "rating": 84,
+      "pos": "RM",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032280.png"
+    },
+    {
+      "name": "Westfield",
+      "rating": 84,
+      "pos": "RB",
+      "club": "",
+      "nation": "United States",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032261.png"
+    },
+    {
+      "name": "Lala",
+      "rating": 84,
+      "pos": "RB",
+      "club": "",
+      "nation": "France",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032319.png"
+    },
+    {
+      "name": "Jackson",
+      "rating": 84,
+      "pos": "CM",
+      "club": "",
+      "nation": "United States",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032267.png"
+    },
+    {
+      "name": "Álex Baena",
+      "rating": 84,
+      "pos": "LM",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032343.png"
+    },
+    {
+      "name": "Tordin",
+      "rating": 84,
+      "pos": "ST",
+      "club": "",
+      "nation": "United States",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032269.png"
+    },
+    {
+      "name": "Bowen",
+      "rating": 84,
+      "pos": "RM",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032274.png"
+    },
+    {
+      "name": "Tsakiris",
+      "rating": 84,
+      "pos": "CAM",
+      "club": "",
+      "nation": "United States",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032262.png"
+    },
+    {
+      "name": "Bowen",
+      "rating": 84,
+      "pos": "RM",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032427.png"
+    },
+    {
+      "name": "Duah",
+      "rating": 84,
+      "pos": "CB",
+      "club": "",
+      "nation": "Ghana",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032264.png"
+    },
+    {
+      "name": "Van Zanten",
+      "rating": 84,
+      "pos": "RB",
+      "club": "",
+      "nation": "Jamaica",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032265.png"
+    },
+    {
       "name": "Matsukubo",
       "rating": 83,
       "pos": "CAM",
@@ -10460,6 +11414,42 @@
       "nation": "Nigeria",
       "type": "",
       "img": "https://assets.futgenie.gg/cards/948889.png"
+    },
+    {
+      "name": "Pedro Neto",
+      "rating": 83,
+      "pos": "RM",
+      "club": "",
+      "nation": "Portugal",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032303.png"
+    },
+    {
+      "name": "Pedro Neto",
+      "rating": 83,
+      "pos": "RM",
+      "club": "",
+      "nation": "Portugal",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032297.png"
+    },
+    {
+      "name": "Tverskov",
+      "rating": 83,
+      "pos": "CB",
+      "club": "",
+      "nation": "Denmark",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032380.png"
+    },
+    {
+      "name": "Pedro Neto",
+      "rating": 83,
+      "pos": "RM",
+      "club": "",
+      "nation": "Portugal",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032420.png"
     },
     {
       "name": "Shaw",
@@ -11990,6 +12980,123 @@
       "nation": "Netherlands",
       "type": "",
       "img": "https://assets.futgenie.gg/cards/1032227.png"
+    },
+    {
+      "name": "Maza",
+      "rating": 82,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Algeria",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032421.png"
+    },
+    {
+      "name": "Bremer",
+      "rating": 82,
+      "pos": "ST",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032400.png"
+    },
+    {
+      "name": "Javi Rodríguez",
+      "rating": 82,
+      "pos": "CB",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032408.png"
+    },
+    {
+      "name": "Maza",
+      "rating": 82,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Algeria",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032311.png"
+    },
+    {
+      "name": "Javi Rodríguez",
+      "rating": 82,
+      "pos": "CB",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032406.png"
+    },
+    {
+      "name": "Bremer",
+      "rating": 82,
+      "pos": "ST",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032404.png"
+    },
+    {
+      "name": "Bremer",
+      "rating": 82,
+      "pos": "ST",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032310.png"
+    },
+    {
+      "name": "Bremer",
+      "rating": 82,
+      "pos": "ST",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032296.png"
+    },
+    {
+      "name": "Javi Rodríguez",
+      "rating": 82,
+      "pos": "CB",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032291.png"
+    },
+    {
+      "name": "Maza",
+      "rating": 82,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Algeria",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032309.png"
+    },
+    {
+      "name": "Maza",
+      "rating": 82,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Algeria",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032422.png"
+    },
+    {
+      "name": "Nkunku",
+      "rating": 82,
+      "pos": "CAM",
+      "club": "",
+      "nation": "France",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032344.png"
+    },
+    {
+      "name": "Javi Rodríguez",
+      "rating": 82,
+      "pos": "CB",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032289.png"
     },
     {
       "name": "Vušković",
@@ -16895,6 +18002,492 @@
       "nation": "Brazil",
       "type": "",
       "img": "https://assets.futgenie.gg/cards/1032199.png"
+    },
+    {
+      "name": "Mendy",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Guinea Bissau",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032270.png"
+    },
+    {
+      "name": "Dønnum",
+      "rating": 80,
+      "pos": "RM",
+      "club": "",
+      "nation": "Norway",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032410.png"
+    },
+    {
+      "name": "Arous",
+      "rating": 80,
+      "pos": "CB",
+      "club": "",
+      "nation": "Tunisia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032392.png"
+    },
+    {
+      "name": "Arous",
+      "rating": 80,
+      "pos": "CB",
+      "club": "",
+      "nation": "Tunisia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032398.png"
+    },
+    {
+      "name": "Stanković",
+      "rating": 80,
+      "pos": "GK",
+      "club": "",
+      "nation": "Serbia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032407.png"
+    },
+    {
+      "name": "Diakité",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Ivory Coast",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032284.png"
+    },
+    {
+      "name": "Stanković",
+      "rating": 80,
+      "pos": "GK",
+      "club": "",
+      "nation": "Serbia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032272.png"
+    },
+    {
+      "name": "Provstgaard",
+      "rating": 80,
+      "pos": "CB",
+      "club": "",
+      "nation": "Denmark",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032304.png"
+    },
+    {
+      "name": "Mendy",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Guinea Bissau",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032402.png"
+    },
+    {
+      "name": "Raimondo",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Italy",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032299.png"
+    },
+    {
+      "name": "Cecilia Marcos",
+      "rating": 80,
+      "pos": "LB",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032411.png"
+    },
+    {
+      "name": "Sinayoko",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Mali",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032412.png"
+    },
+    {
+      "name": "Nygren",
+      "rating": 80,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Sweden",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032396.png"
+    },
+    {
+      "name": "Dønnum",
+      "rating": 80,
+      "pos": "RM",
+      "club": "",
+      "nation": "Norway",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032434.png"
+    },
+    {
+      "name": "Raimondo",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Italy",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032302.png"
+    },
+    {
+      "name": "Diakité",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Ivory Coast",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032431.png"
+    },
+    {
+      "name": "Oosting",
+      "rating": 80,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Netherlands",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032278.png"
+    },
+    {
+      "name": "Stanković",
+      "rating": 80,
+      "pos": "GK",
+      "club": "",
+      "nation": "Serbia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032405.png"
+    },
+    {
+      "name": "Sinayoko",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Mali",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032409.png"
+    },
+    {
+      "name": "Provstgaard",
+      "rating": 80,
+      "pos": "CB",
+      "club": "",
+      "nation": "Denmark",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032416.png"
+    },
+    {
+      "name": "Raimondo",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Italy",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032414.png"
+    },
+    {
+      "name": "Oosting",
+      "rating": 80,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Netherlands",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032423.png"
+    },
+    {
+      "name": "Sinayoko",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Mali",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032292.png"
+    },
+    {
+      "name": "Nygren",
+      "rating": 80,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Sweden",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032294.png"
+    },
+    {
+      "name": "Sinayoko",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Mali",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032290.png"
+    },
+    {
+      "name": "Diakité",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Ivory Coast",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032271.png"
+    },
+    {
+      "name": "Provstgaard",
+      "rating": 80,
+      "pos": "CB",
+      "club": "",
+      "nation": "Denmark",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032301.png"
+    },
+    {
+      "name": "Stanković",
+      "rating": 80,
+      "pos": "GK",
+      "club": "",
+      "nation": "Serbia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032306.png"
+    },
+    {
+      "name": "Mendy",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Guinea Bissau",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032424.png"
+    },
+    {
+      "name": "Gómez",
+      "rating": 80,
+      "pos": "RM",
+      "club": "",
+      "nation": "Paraguay",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032426.png"
+    },
+    {
+      "name": "Oosting",
+      "rating": 80,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Netherlands",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032394.png"
+    },
+    {
+      "name": "Cecilia Marcos",
+      "rating": 80,
+      "pos": "LB",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032415.png"
+    },
+    {
+      "name": "Arous",
+      "rating": 80,
+      "pos": "CB",
+      "club": "",
+      "nation": "Tunisia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032293.png"
+    },
+    {
+      "name": "Cecilia Marcos",
+      "rating": 80,
+      "pos": "LB",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032308.png"
+    },
+    {
+      "name": "Henderson",
+      "rating": 80,
+      "pos": "CM",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032342.png"
+    },
+    {
+      "name": "Arous",
+      "rating": 80,
+      "pos": "CB",
+      "club": "",
+      "nation": "Tunisia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032282.png"
+    },
+    {
+      "name": "Gómez",
+      "rating": 80,
+      "pos": "RM",
+      "club": "",
+      "nation": "Paraguay",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032313.png"
+    },
+    {
+      "name": "Müller",
+      "rating": 80,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032320.png"
+    },
+    {
+      "name": "Mendy",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Guinea Bissau",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032286.png"
+    },
+    {
+      "name": "Gómez",
+      "rating": 80,
+      "pos": "RM",
+      "club": "",
+      "nation": "Paraguay",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032403.png"
+    },
+    {
+      "name": "Cecilia Marcos",
+      "rating": 80,
+      "pos": "LB",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032300.png"
+    },
+    {
+      "name": "Nygren",
+      "rating": 80,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Sweden",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032399.png"
+    },
+    {
+      "name": "Pablo Rodríguez",
+      "rating": 80,
+      "pos": "CAM",
+      "club": "Getafe CF",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032429.png"
+    },
+    {
+      "name": "Raimondo",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Italy",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032428.png"
+    },
+    {
+      "name": "Dønnum",
+      "rating": 80,
+      "pos": "RM",
+      "club": "",
+      "nation": "Norway",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032277.png"
+    },
+    {
+      "name": "Diakité",
+      "rating": 80,
+      "pos": "ST",
+      "club": "",
+      "nation": "Ivory Coast",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032433.png"
+    },
+    {
+      "name": "Pablo Rodríguez",
+      "rating": 80,
+      "pos": "CAM",
+      "club": "Getafe CF",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032425.png"
+    },
+    {
+      "name": "Gómez",
+      "rating": 80,
+      "pos": "RM",
+      "club": "",
+      "nation": "Paraguay",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032266.png"
+    },
+    {
+      "name": "Provstgaard",
+      "rating": 80,
+      "pos": "CB",
+      "club": "",
+      "nation": "Denmark",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032418.png"
+    },
+    {
+      "name": "Pablo Rodríguez",
+      "rating": 80,
+      "pos": "CAM",
+      "club": "Getafe CF",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032275.png"
+    },
+    {
+      "name": "Pablo Rodríguez",
+      "rating": 80,
+      "pos": "CAM",
+      "club": "Getafe CF",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032276.png"
+    },
+    {
+      "name": "Dønnum",
+      "rating": 80,
+      "pos": "RM",
+      "club": "",
+      "nation": "Norway",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032279.png"
+    },
+    {
+      "name": "Nygren",
+      "rating": 80,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Sweden",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032288.png"
+    },
+    {
+      "name": "Oosting",
+      "rating": 80,
+      "pos": "CAM",
+      "club": "",
+      "nation": "Netherlands",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032295.png"
     },
     {
       "name": "Sarr",
@@ -21838,6 +23431,24 @@
       "img": "https://assets.futgenie.gg/cards/953265.png"
     },
     {
+      "name": "Otamendi",
+      "rating": 78,
+      "pos": "CB",
+      "club": "",
+      "nation": "Argentina",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032318.png"
+    },
+    {
+      "name": "Džeko",
+      "rating": 78,
+      "pos": "ST",
+      "club": "",
+      "nation": "Bosnia Herzegovina",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032315.png"
+    },
+    {
       "name": "Álvaro Valles",
       "rating": 77,
       "pos": "GK",
@@ -25292,6 +26903,15 @@
       "nation": "Brazil",
       "type": "",
       "img": "https://assets.futgenie.gg/cards/1032123.png"
+    },
+    {
+      "name": "Mings",
+      "rating": 77,
+      "pos": "CB",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032327.png"
     },
     {
       "name": "Lucas Perri",
@@ -29405,6 +31025,24 @@
       "nation": "Venezuela",
       "type": "",
       "img": "https://assets.futgenie.gg/cards/950884.png"
+    },
+    {
+      "name": "Shaqiri",
+      "rating": 76,
+      "pos": "CAM",
+      "club": "Libertad",
+      "nation": "Switzerland",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032314.png"
+    },
+    {
+      "name": "Héctor Bellerín",
+      "rating": 76,
+      "pos": "RB",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032331.png"
     },
     {
       "name": "Borré",
@@ -94738,6 +96376,15 @@
       "img": "https://assets.futgenie.gg/cards/946152.png"
     },
     {
+      "name": "Medel",
+      "rating": 68,
+      "pos": "CDM",
+      "club": "",
+      "nation": "Chile",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/1032316.png"
+    },
+    {
       "name": "Ricardo Mathias",
       "rating": 67,
       "pos": "ST",
@@ -105509,6 +107156,573 @@
       "nation": "DR Congo",
       "type": "",
       "img": "https://assets.futgenie.gg/cards/951400.png"
+    },
+    {
+      "name": "Nabil Touaizi",
+      "rating": 67,
+      "pos": "RM",
+      "club": "West Ham",
+      "nation": "Morocco",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/953011.png"
+    },
+    {
+      "name": "Tumminello",
+      "rating": 67,
+      "pos": "ST",
+      "club": "",
+      "nation": "Italy",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/949053.png"
+    },
+    {
+      "name": "Reyes",
+      "rating": 67,
+      "pos": "LB",
+      "club": "Chengdu FC",
+      "nation": "Mexico",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/949411.png"
+    },
+    {
+      "name": "Marina Rivas",
+      "rating": 67,
+      "pos": "CM",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/957416.png"
+    },
+    {
+      "name": "Blackett-Taylor",
+      "rating": 67,
+      "pos": "LM",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/948880.png"
+    },
+    {
+      "name": "Aremu",
+      "rating": 67,
+      "pos": "CDM",
+      "club": "",
+      "nation": "Nigeria",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/950925.png"
+    },
+    {
+      "name": "Huguinho",
+      "rating": 67,
+      "pos": "CDM",
+      "club": "",
+      "nation": "Brazil",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/945792.png"
+    },
+    {
+      "name": "Elves Baldé",
+      "rating": 67,
+      "pos": "RM",
+      "club": "",
+      "nation": "Guinea Bissau",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/951026.png"
+    },
+    {
+      "name": "Saúl Crespo",
+      "rating": 67,
+      "pos": "CM",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/952573.png"
+    },
+    {
+      "name": "Hoedemakers",
+      "rating": 67,
+      "pos": "CDM",
+      "club": "CF Monterrey",
+      "nation": "Netherlands",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/950847.png"
+    },
+    {
+      "name": "Nichetti",
+      "rating": 67,
+      "pos": "CDM",
+      "club": "",
+      "nation": "Italy",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/942549.png"
+    },
+    {
+      "name": "De Roeve",
+      "rating": 67,
+      "pos": "RB",
+      "club": "Modena",
+      "nation": "Belgium",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/941100.png"
+    },
+    {
+      "name": "Diego Mariño",
+      "rating": 67,
+      "pos": "GK",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/946326.png"
+    },
+    {
+      "name": "Mimaroğlu",
+      "rating": 67,
+      "pos": "LM",
+      "club": "",
+      "nation": "Türkiye",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/955092.png"
+    },
+    {
+      "name": "Yohanna",
+      "rating": 67,
+      "pos": "RM",
+      "club": "",
+      "nation": "Nigeria",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/942659.png"
+    },
+    {
+      "name": "Clement",
+      "rating": 67,
+      "pos": "CM",
+      "club": "",
+      "nation": "Netherlands",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/949670.png"
+    },
+    {
+      "name": "Oancea",
+      "rating": 67,
+      "pos": "RB",
+      "club": "",
+      "nation": "Romania",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/953727.png"
+    },
+    {
+      "name": "Pejiño",
+      "rating": 67,
+      "pos": "RM",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/950871.png"
+    },
+    {
+      "name": "Özcan",
+      "rating": 67,
+      "pos": "CM",
+      "club": "",
+      "nation": "Türkiye",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/949605.png"
+    },
+    {
+      "name": "Papela",
+      "rating": 67,
+      "pos": "CM",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/952897.png"
+    },
+    {
+      "name": "Kakou",
+      "rating": 67,
+      "pos": "CB",
+      "club": "",
+      "nation": "Ivory Coast",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/940697.png"
+    },
+    {
+      "name": "Ens",
+      "rating": 67,
+      "pos": "CB",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/959611.png"
+    },
+    {
+      "name": "Lahdo",
+      "rating": 67,
+      "pos": "RW",
+      "club": "",
+      "nation": "Sweden",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/953427.png"
+    },
+    {
+      "name": "Juan Sebastián",
+      "rating": 67,
+      "pos": "RB",
+      "club": "",
+      "nation": "Spain",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/958877.png"
+    },
+    {
+      "name": "Guerra",
+      "rating": 67,
+      "pos": "RM",
+      "club": "",
+      "nation": "Colombia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/954137.png"
+    },
+    {
+      "name": "Felippe Cardoso",
+      "rating": 67,
+      "pos": "ST",
+      "club": "",
+      "nation": "Brazil",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/954630.png"
+    },
+    {
+      "name": "Vargas",
+      "rating": 67,
+      "pos": "RB",
+      "club": "",
+      "nation": "Venezuela",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/949945.png"
+    },
+    {
+      "name": "Padilla",
+      "rating": 67,
+      "pos": "LW",
+      "club": "",
+      "nation": "Mexico",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/944463.png"
+    },
+    {
+      "name": "Potter",
+      "rating": 67,
+      "pos": "CDM",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/940565.png"
+    },
+    {
+      "name": "Imperiale",
+      "rating": 67,
+      "pos": "CB",
+      "club": "",
+      "nation": "Italy",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/950819.png"
+    },
+    {
+      "name": "Hines-Ike",
+      "rating": 67,
+      "pos": "CB",
+      "club": "",
+      "nation": "United States",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/949044.png"
+    },
+    {
+      "name": "Müller",
+      "rating": 67,
+      "pos": "CB",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/944703.png"
+    },
+    {
+      "name": "Purić",
+      "rating": 67,
+      "pos": "CB",
+      "club": "",
+      "nation": "Serbia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/940141.png"
+    },
+    {
+      "name": "Agouzoul",
+      "rating": 67,
+      "pos": "CB",
+      "club": "",
+      "nation": "Morocco",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/952479.png"
+    },
+    {
+      "name": "Schäfer",
+      "rating": 67,
+      "pos": "CB",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/944704.png"
+    },
+    {
+      "name": "ter Avest",
+      "rating": 67,
+      "pos": "RB",
+      "club": "",
+      "nation": "Netherlands",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/948323.png"
+    },
+    {
+      "name": "Celton Biai",
+      "rating": 67,
+      "pos": "GK",
+      "club": "",
+      "nation": "Guinea Bissau",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/953931.png"
+    },
+    {
+      "name": "Meli",
+      "rating": 67,
+      "pos": "LB",
+      "club": "",
+      "nation": "Argentina",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/956751.png"
+    },
+    {
+      "name": "Peterson",
+      "rating": 67,
+      "pos": "LM",
+      "club": "",
+      "nation": "Sweden",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/946896.png"
+    },
+    {
+      "name": "Faedo",
+      "rating": 67,
+      "pos": "CB",
+      "club": "",
+      "nation": "Italy",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/942042.png"
+    },
+    {
+      "name": "Kauã Prates",
+      "rating": 67,
+      "pos": "LB",
+      "club": "",
+      "nation": "Brazil",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/943719.png"
+    },
+    {
+      "name": "Dekker",
+      "rating": 67,
+      "pos": "CB",
+      "club": "",
+      "nation": "Netherlands",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/956376.png"
+    },
+    {
+      "name": "Ali",
+      "rating": 67,
+      "pos": "ST",
+      "club": "",
+      "nation": "Palestinian Authority",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/950877.png"
+    },
+    {
+      "name": "Sandberg",
+      "rating": 67,
+      "pos": "GK",
+      "club": "",
+      "nation": "Sweden",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/946111.png"
+    },
+    {
+      "name": "Suhr",
+      "rating": 67,
+      "pos": "LW",
+      "club": "",
+      "nation": "Uruguay",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/952979.png"
+    },
+    {
+      "name": "Kother",
+      "rating": 67,
+      "pos": "LM",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/952189.png"
+    },
+    {
+      "name": "Sviatchenko",
+      "rating": 67,
+      "pos": "CB",
+      "club": "",
+      "nation": "Denmark",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/946338.png"
+    },
+    {
+      "name": "Kim Seung Sub",
+      "rating": 67,
+      "pos": "LM",
+      "club": "Always Ready",
+      "nation": "Korea Republic",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/950940.png"
+    },
+    {
+      "name": "Sessa",
+      "rating": 67,
+      "pos": "CM",
+      "club": "",
+      "nation": "Germany",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/950967.png"
+    },
+    {
+      "name": "Akintola",
+      "rating": 67,
+      "pos": "RM",
+      "club": "",
+      "nation": "Nigeria",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/948264.png"
+    },
+    {
+      "name": "Italo",
+      "rating": 67,
+      "pos": "CM",
+      "club": "Cusco FC",
+      "nation": "Brazil",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/938972.png"
+    },
+    {
+      "name": "Benedetti",
+      "rating": 67,
+      "pos": "CM",
+      "club": "",
+      "nation": "Italy",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/951356.png"
+    },
+    {
+      "name": "Mosquera",
+      "rating": 67,
+      "pos": "RM",
+      "club": "",
+      "nation": "Colombia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/952184.png"
+    },
+    {
+      "name": "Devenish-Meares",
+      "rating": 67,
+      "pos": "GK",
+      "club": "",
+      "nation": "Australia",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/954822.png"
+    },
+    {
+      "name": "Patiño",
+      "rating": 67,
+      "pos": "CM",
+      "club": "",
+      "nation": "England",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/954310.png"
+    },
+    {
+      "name": "Gantenbein",
+      "rating": 67,
+      "pos": "RB",
+      "club": "",
+      "nation": "Switzerland",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/956711.png"
+    },
+    {
+      "name": "Paulo Henrique",
+      "rating": 67,
+      "pos": "LB",
+      "club": "",
+      "nation": "Portugal",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/948732.png"
+    },
+    {
+      "name": "Pijnaker",
+      "rating": 67,
+      "pos": "CB",
+      "club": "",
+      "nation": "New Zealand",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/952996.png"
+    },
+    {
+      "name": "Rubchynskyi",
+      "rating": 67,
+      "pos": "CM",
+      "club": "",
+      "nation": "Ukraine",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/939983.png"
+    },
+    {
+      "name": "Tomás Esteves",
+      "rating": 67,
+      "pos": "RB",
+      "club": "",
+      "nation": "Portugal",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/952557.png"
+    },
+    {
+      "name": "Xie Wenneng",
+      "rating": 67,
+      "pos": "RM",
+      "club": "",
+      "nation": "China PR",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/954697.png"
+    },
+    {
+      "name": "Arce",
+      "rating": 67,
+      "pos": "CDM",
+      "club": "",
+      "nation": "Argentina",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/956102.png"
+    },
+    {
+      "name": "Umeugochukwu",
+      "rating": 67,
+      "pos": "CB",
+      "club": "",
+      "nation": "Nigeria",
+      "type": "",
+      "img": "https://assets.futgenie.gg/cards/939782.png"
     },
     {
       "name": "Butzke",
